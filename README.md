@@ -74,7 +74,7 @@ projects like MAMP to help set up your computer with these things.
     - Grant the puzzletron user access to that database
 
 ```
-          mysql -u <mysqlusername> -s <servername> -p <databasename> < schema.sql
+          mysql -u <mysqlusername> -h <servername> -p <databasename> < schema.sql
 ```
       (enter password for the puzzletron DB user when prompted)
 

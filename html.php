@@ -14,12 +14,12 @@ function echoNav1($selnav, $name, $linktext, $condition) {
 }
 
 function fullTitle() {
-    return 'MH' . HUNT_YEAR . ' puzzletron authoring server (' . (DEVMODE ? 'test/dev' : (PRACMODE ? 'practice' : 'actual mystery hunt-writing')) . ' instance)';
+    return 'GPH' . HUNT_YEAR . ' puzzletron authoring server (' . (DEVMODE ? 'test/dev' : (PRACMODE ? 'practice' : 'actual mystery hunt-writing')) . ' instance)';
 }
 
 function head($selnav = "", $title = -1) {
     if ($title == -1) {$title = fullTitle();}
-$hunt = mktime(12, 00, 00, 1, HUNT_DOM, HUNT_YEAR);
+$hunt = mktime(16, 14, 00, HUNT_MONTH, HUNT_DAY, HUNT_YEAR);
 $now = time();
 $timediff = abs($hunt-$now);
 $days = (int)($timediff/(60 * 60 * 24));
@@ -103,14 +103,15 @@ if (isset($_SESSION['uid'])) {
     echoNav1($selnav, "editor",         "Discussion Editor",   hasEditorPermission($suid));
     echoNav1($selnav, "approver",       "Approval Editor",     (USING_APPROVERS) && (hasApproverPermission($suid) || isEditorChief($suid)));
     echoNav1($selnav, "testsolving",    "Testsolving",         true);
-//    echoNav1($selnav, "factcheck",      "Fact Check",          true);
-    echoNav1($selnav, "ffc",            "Final Fact Check",    hasFactCheckerPermission($suid));
+    echoNav1($selnav, "factcheck",      "Fact Check",          true);
+    //echoNav1($selnav, "ffc",            "Final Fact Check",    hasFactCheckerPermission($suid));
     echoNav1($selnav, "editorlist",     "Editor List",         isEditorChief($suid) || hasServerAdminPermission($suid));
     echoNav1($selnav, "testadmin",      "Testing Admin",       hasTestAdminPermission($suid));
     echoNav1($selnav, "testsolveteams", "TS Team Assignments", (USING_TESTSOLVE_TEAMS) && hasTestAdminPermission($suid));
     echoNav1($selnav, "answers",        "Answers",             canChangeAnswers($suid));
     echoNav1($selnav, "allpuzzles",     "All Puzzles",         canSeeAllPuzzles($suid));
     echoNav1($selnav, "editor-pick-special",     "Puzzles Needing Help",         hasEditorPermission($suid));
+    echoNav1($selnav, "postprod",       "Postprod",            true);
 }
 ?>
             </ul>

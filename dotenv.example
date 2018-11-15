@@ -108,7 +108,7 @@ PTRON_MIN_APPROVERS="2"
 
 # If a puzzle has this many approvals, then it's eligible to be
 # advanced to the next state
-PTRON_APROVALS_REQUIRED="2"
+PTRON_APPROVALS_REQUIRED="2"
 
 # If set to a non-0 value, puzzletron will send a reminder email
 # asking for updates to puzzles that seem to have been blocked on

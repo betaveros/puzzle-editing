@@ -15,6 +15,8 @@ head("postprod");
 $puzzles = getPuzzlesInPostprodAndLater($uid);
 displayQueue($uid, $puzzles, "notes finallinks", FALSE);
 ?>
+There used to be a button here, but I removed it.
+<!--
     <hr>
     <br>
     <div class="warning">Warning: Please don't press this button. If you were supposed to press this button, you would know.</div>
@@ -23,6 +25,7 @@ displayQueue($uid, $puzzles, "notes finallinks", FALSE);
     <input type="submit" name="postprodAll" value="Re-postprod ALL puzzles (THIS CANNOT BE UNDONE) [This will take a LONG TIME!]">
     </form>
     <br>
+-->
 <?php
 // End the HTML
 foot();

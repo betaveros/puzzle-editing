@@ -62,7 +62,8 @@ Dotenv::required(array(
     'PTRON_MMBLANCHE_PASSWORDS',
     'PTRON_EDITOR_MAILING_LIST',
     'PTRON_HUNT_YEAR',
-    'PTRON_HUNT_DOM',
+    'PTRON_HUNT_MONTH',
+    'PTRON_HUNT_DAY',
 ));
 
 # The code below wraps the config environment variables in PHP
@@ -123,7 +124,8 @@ define("APPROVALS_REQUIRED", getenv('PTRON_APPROVALS_REQUIRED'));
 define("REMINDER_EMAIL_DAYS", getenv('PTRON_REMINDER_EMAIL_DAYS'));
 
 define("HUNT_YEAR", getenv('PTRON_HUNT_YEAR'));
-define("HUNT_DOM", getenv('PTRON_HUNT_DOM'));
+define("HUNT_MONTH", getenv('PTRON_HUNT_MONTH'));
+define("HUNT_DAY", getenv('PTRON_HUNT_DAY'));
 
 define("DEVMODE", _parseBooleanEnv('PTRON_DEVMODE'));
 define("PRACMODE", _parseBooleanEnv('PTRON_PRACMODE'));
