@@ -78,11 +78,21 @@ projects like MAMP to help set up your computer with these things.
 ```
       (enter password for the puzzletron DB user when prompted)
 
+      `'puzzletron'@'localhost'` won't work on NFS due to distributed blah blah blah, just omit `@'localhost'`
+
+      CREATE USER 'puzzletron' IDENTIFIED BY 'your password goes here';
+      CREATE DATABASE puzzletron;
+      GRANT ALL ON puzzletron.* TO 'puzzletron';
+
 - Copy `dotenv.example` to `.env` and edit
   appropriately. `PTRON_DB_NAME`, `PTRON_DB_USER`, and
   `PTRON_DB_PASSWORD` are the name, user, and password of the database
   you created above. `PTRON_URL` is the URL that will appear in links
   which point back at your app.
+
+- `composer install`
+- you probably want to give yourself permissions or something so `select * from users;` and `insert into user_role values (<your uid>, 8);`
+- (just NFS things) make and `chgrp web` some random folders: `tmp/purifier-cache`, `uploads/pictures/thumbs`, `uploads/puzzle_files`
 
 ### File Permissions:
 
