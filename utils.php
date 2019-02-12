@@ -1053,6 +1053,8 @@ function getCommentTypeName($uid, $pid) {
         return "TestingAdmin";
     } elseif (isFactcheckerOnPuzzle($uid, $pid)) {
         return "Factchecker";
+    } elseif (isSpoiledOnPuzzle($uid, $pid)) {
+        return "Spoiled Person";
     } else {
         return NULL; // lurker or unknown, cannot comment
     }
