@@ -6,4 +6,3 @@ if (isset($argv[1]) && $argv[1] === "fake") {
 } else {
     sendAllEmail(TRUE);
 }
-echo 'Sent emails';

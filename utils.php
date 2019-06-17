@@ -125,8 +125,8 @@ function isValidPuzzleURL() {
 function postprodCanon($s) {
     $s = strtolower(trim($s));
     $s = preg_replace('/[\']([st])\b/', '$1', $s);
-    $s = preg_replace('/[^a-z0-9]+/', '_', $s);
-    return trim($s, "_");
+    $s = preg_replace('/[^a-z0-9]+/', '-', $s);
+    return trim($s, "-");
 }
 
 function nl2br2($s) {

@@ -19,7 +19,7 @@ function fullTitle() {
 
 function head($selnav = "", $title = -1) {
     if ($title == -1) {$title = fullTitle();}
-$hunt = mktime(16, 14, 00, HUNT_MONTH, HUNT_DAY, HUNT_YEAR);
+$hunt = mktime(18, 28, 00, HUNT_MONTH, HUNT_DAY, HUNT_YEAR);
 $now = time();
 $timediff = abs($hunt-$now);
 $days = (int)($timediff/(60 * 60 * 24));
